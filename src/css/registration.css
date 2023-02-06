@@ -152,24 +152,28 @@ button {
     font-size: 1rem;
 }
 
-label{
+label {
     display: flex;
     justify-content: unset;
     margin: 4px;
 }
 
-
-
-.span{
+.span {
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
 
 
-.end{
+.end {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: end;
+}
+
+.all-inputs {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 }

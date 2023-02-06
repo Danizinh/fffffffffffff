@@ -11,6 +11,7 @@
     <script src="../js/pass.js"></script>
     <title>Entre com a sua Conta</title>
 </head>
+
 <body>
     <div class="div-container">
         <div class="div-contact-box">
@@ -21,26 +22,45 @@
                     Registration
                 </h2>
                 <form action="../api/cadastro.php" method="POST">
-                    <label for="person_name">name:</label>
-                    <input type="text" name="person_name" class="div-field" placeholder="Gabriela" required>
-                    <label for="name">last name:</label>
-                    <input type="text" name="last_name" class="div-field" placeholder="Gabriela" required>
-                    <label for="email">E-mail:</label>
-                    <input type="email" name="email" class="div-field" placeholder="gabriel@email.com" required>
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" id="password" class="div-field" placeholder="********" required>
+                    <div class="all-input">
+                        <label for="person_name">Name:</label>
+                        <input type="text" name="person_name" class="div-field" required placeholder="Maria ">
+                    </div>
+                    <div class="all-input">
+                        <label for="name">Last name:</label>
+                        <input type="text" name="last_name" class="div-field" placeholder="Gabriela" required>
+                    </div>
+
+                    <div class="all-input">
+                        <label for="email">E-mail:</label>
+                        <input type="email" name="email" class="div-field" placeholder="gabriel@email.com" required>
+                    </div>
+
+                    <div class="all-input">
+                        <label>Senha:</label>
+                        <input type="password" id="password" minlength="6" maxlength="12"
+                            onKeyUp="verificaForcaSenha();" class="div-field" />
+                        <span id="password-status"></span>
+                    </div>
+
+                    <div class="all-input">
+                        <label for="">Confirmation</label for="">
+                        <input type="password" name="password" id="confirmation_password" class="div-field"
+                            placeholder=" ********" required>
+                    </div>
+
                     <button type="submit" class="btn div-success" name="submit">Registration</button>
                     <div class="div-paragraph">
                         <?php
-                           if(isset($_GET["erro"])){
-                            if($_GET["erro"] == 4){
+                        if (isset($_GET["erro"])) {
+                            if ($_GET["erro"] == 4) {
                                 echo '<p class="paragraph" style="color: red !important; display: flex;
-                                justify-content: center;">Email já cadastrado ! Tente novamante!</p>';
+                            justify-content: center;">Email já cadastrado ! Tente novamante!</p>';
                             }
-                           }
+                        }
                         ?>
                         <a href="../api/forgot.php" class="_97w4">Esqueceu a conta? </a>
-                        <a href="../php/registration.php">Não está cadastrado ainda?</a>
+                        <a href="../php/login.php">Faça seu login</a>
                     </div>
                 </form>
             </div>

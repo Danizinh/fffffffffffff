@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link rel="icon" href="./img/Cartoon-Lâmpada-PNG.png">
@@ -9,6 +10,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <title>Entre com a sua Conta</title>
 </head>
+
 <body>
     <div class="div-container">
         <div class="div-contact-box">
@@ -22,17 +24,24 @@
                     <input type="text" name="email" class="div-field" placeholder="email@email.com">
                     <input type="password" name="password" class="div-field" placeholder="*********">
                     <?php
-                    if (isset($_GET['error'])) {
-                        if ($_GET['error'] == 1) {
+                    if (isset($_GET["erro"])) {
+                        if ($_GET["erro"] == 1) {
                             echo '<p class="paragraph" style="color: red !important;">email ou senha incorretos, tente novamente!</p>';
                         }
+                        if ($_GET["erro"] == 2) {
+                            echo '<p class="paragraph" style="color: red !important;">Troca de senha falhou, tente novamente!</p>';
+                        }
+                        if ($_GET["erro"] == 3) {
+                            echo '<p class="paragraph" style="color: green !important;">Email enviado com sucesso!</p>';
+                        }
                     }
+
                     ?>
                     <button type="submit" class="btn div-success" name="submit">Log in</button>
                     <div class="div-paragraph">
                         <a href="../api/forgot.php" class="_97w4">Esqueceu a conta?</a>
                         <a href="../api/efetuar_login.php">
-                            <a href="../php/registration.php">Não está cadastrado ainda?</a>
+                            <a href="../php/registration.php">Já tem cadastro??</a>
                         </a>
                     </div>
                 </form>

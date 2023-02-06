@@ -2,22 +2,27 @@ CREATE DATABASE informacaoes;
 
 USE informacaoes;
 
-CREATE TABLE dados(
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    person_name VARCHAR(100),
-    last_name VARCHAR(100),
-    email VARCHAR(100)UNIQUE,
-    password VARCHAR(100),
-    phone VARCHAR(20),
-    my_address VARCHAR(100),
-    nationality VARCHAR(100),
-    gender VARCHAR(1),
-    link_linked_in VARCHAR(255),
-    link_facebook VARCHAR(255),
-    languages VARCHAR(255)
-);
+CREATE TABLE
+    profil(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        img VARCHAR(50),
+        person_name VARCHAR(100),
+        last_name VARCHAR(100),
+        gender VARCHAR(1),
+        birthday DATE,
+        profession VARCHAR(225),
+        email VARCHAR(100) UNIQUE,
+        phone VARCHAR(9),
+        password VARCHAR(100),
+        my_address VARCHAR(100),
+        numberss VARCHAR(22),
+        complement VARCHAR(10),
+        city VARCHAR(10),
+        nationality VARCHAR(100),
+        link_linked_in VARCHAR(255),
+        languages VARCHAR(255)
+    );
 
-SELECT * FROM dados;
-DROP TABLE dados;
+SELECT * FROM profil;
 
-insert into dados(nationality) values('brasil');
+DROP TABLE profil;
