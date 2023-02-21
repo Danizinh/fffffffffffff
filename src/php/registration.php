@@ -27,11 +27,6 @@
                         <input type="text" name="person_name" class="div-field" required placeholder="Maria ">
                     </div>
                     <div class="all-input">
-                        <label for="name">Last name:</label>
-                        <input type="text" name="last_name" class="div-field" placeholder="Gabriela" required>
-                    </div>
-
-                    <div class="all-input">
                         <label for="email">E-mail:</label>
                         <input type="email" name="email" class="div-field" placeholder="gabriel@email.com" required>
                     </div>

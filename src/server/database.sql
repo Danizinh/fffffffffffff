@@ -7,7 +7,6 @@ CREATE TABLE
         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
         img VARCHAR(50),
         person_name VARCHAR(100),
-        last_name VARCHAR(100),
         gender VARCHAR(1),
         birthday DATE,
         profession VARCHAR(225),
@@ -18,9 +17,7 @@ CREATE TABLE
         numberss VARCHAR(22),
         complement VARCHAR(10),
         city VARCHAR(10),
-        nationality VARCHAR(100),
         link_linked_in VARCHAR(255),
-        languages VARCHAR(255)
     );
 
 SELECT * FROM profil;
