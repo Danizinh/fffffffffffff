@@ -53,7 +53,7 @@ a {
   background: url("../img/pexels-revac-film_s_photography-54278.jpg") no-repeat center;
   background-size: cover;
   height: 100%;
-  width: 48vh;
+  width: 33vh;
 }
 
 .div-right {
@@ -107,7 +107,6 @@ input::placeholder {
   font-size: 1rem;
   margin-bottom: 22px;
   transition: 0.3s;
-  border-radius: 10px;
 }
 
 .div-field:hover {
@@ -177,9 +176,25 @@ label {
   display: flex;
 }
 
-
-
-
 input[type="radio"] {
   margin-right: 5px;
+}
+
+.field {
+  width: 50%;
+  float: left;
+  color: #c0c0c0;
+}
+
+.field input {
+  /* margin: 10px 1%;
+  padding: 8px 1%; */
+  width: 97%;
+}
+
+.field select {
+  margin: 10px 1%;
+  padding: 8px 1%;
+  width: 94%;
+  font-weight: bold;
 }

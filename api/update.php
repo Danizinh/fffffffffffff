@@ -5,42 +5,42 @@ session_start();
 
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
+    $last_name = $_POST['last_name'];
     $email = $_POST['email'];
-    $birthday = $_POST['birthday'];
     $profession = $_POST['profession'];
     $phone = $_POST['phone'];
-    $address = $_POST['address'];
-    $numbers = $_POST['numbers'];
-    $complement = $_POST['complement'];
+    $addres = $_POST['address'];
     $city = $_POST['city'];
-    $link_linkedin = $_POST['link_linkedin'];
+    $country = $_POST['country'];
+    $college = $_POST['college'];
+    $bio = $_POST['bio'];
 
-    $sql = $pdo->prepare("UPDATE profile SET name = :name, email = :email,
-    birthday :birthday,gender =:gender, profession =:profession, phone =:phone address =:address, numbers =:numbers
-    complement = :complement, city =:city, link_linkedin = :link_linkedin");
+
+    $sql = $pdo->prepare("UPDATE profile SET name = :name, last_name = :last_name,
+    profession =:profession, phone =:phone, address =:address, city =:city, country =:country,
+    college =:college, bio =:bio WHERE email = :email");
 
     $sql->bindValue(":name", $name);
+    $sql->bindValue(":last_name", $last_name);
     $sql->bindValue(":email", $email);
-    $sql->bindValue(":birthday", $birthday);
     $sql->bindValue(":profession", $profession);
     $sql->bindValue(":phone", $phone);
-    $sql->bindValue(":address", $address);
-    $sql->bindValue(":numbers", $numbers);
-    $sql->bindValue(":complement", $complement);
+    $sql->bindValue(":address", $addres);
     $sql->bindValue(":city", $city);
-    $sql->bindValue(":link_linkedin", $link_linkedin);
-
+    $sql->bindValue(":country", $country);
+    $sql->bindValue(":college", $college);
+    $sql->bindValue(":bio", $bio);
     if ($sql->execute()) {
         $_SESSION['name'] = $name;
+        $_SESSION['last_name'] = $last_name;
         $_SESSION['email'] = $email;
-        $_SESSION['birthday'] = $birthday;
         $_SESSION['profession'] = $profession;
         $_SESSION['phone'] = $phone;
-        $_SESSION['address'] = $address;
-        $_SESSION['numbers'] = $numbers;
-        $_SESSION['complement'] = $complement;
+        $_SESSION['address'] = $addres;
         $_SESSION['city'] = $city;
-        $_SESSION['link_linkedin'] = $link_linkedin;
+        $_SESSION['country'] = $country;
+        $_SESSION['college'] = $college;
+        $_SESSION['bio'] = $bio;
     }
 }
 

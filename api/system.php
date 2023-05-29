@@ -17,7 +17,8 @@ $logado = $_SESSION['email'];
   <link rel="stylesheet" href="../css/style.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sejam bem vindos(a) venham conhecer nossa novas formas de desenvolvimentos e grande novas tecnologias">
+  <meta name="description"
+    content="Sejam bem vindos(a) venham conhecer nossa novas formas de desenvolvimentos e grande novas tecnologias">
 </head>
 
 <body>
@@ -88,12 +89,14 @@ $logado = $_SESSION['email'];
         <div class="profile-details">
           <img src="profile.jpg" alt="profileImg">
           <div class="name_job">
-            <div class="logoName"><?= $_SESSION['name'] ?></div>
+            <div class="logoName">
+              <?= $_SESSION['name'] ?>
+            </div>
             <div class="job">Web designer</div>
           </div>
         </div>
         <div class="d-flex">
-          <a href="exit.php" class="btn btn-danger me-5"><i class='bx bx-log-out' id="log_out"></i></a>
+          <a href="../api/exit.php" class="btn btn-danger me-5"><i class='bx bx-log-out' id="log_out"></i></a>
         </div>
       </li>
     </ul>

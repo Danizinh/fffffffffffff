@@ -6,16 +6,19 @@ CREATE TABLE
     profile(
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         name VARCHAR(100),
+        last_name VARCHAR(100),
         email VARCHAR(100) UNIQUE,
-        birthday DATE,
+        profession VARCHAR(50),
         phone VARCHAR(14),
-        password VARCHAR(100),
-        address VARCHAR(100),
-        numbers VARCHAR(100),
-        complement VARCHAR(10),
-        city VARCHAR(10),
-        link_linkedin VARCHAR(225)
+        address VARCHAR(50),
+        city VARCHAR(50),
+        country VARCHAR(50),
+        password VARCHAR(100)
     );
+
+ALTER TABLE profile ADD COLUMN bio VARCHAR(6555);
+
+ALTER TABLE profile ADD COLUMN college VARCHAR(225);
 
 SELECT * FROM profile;
 

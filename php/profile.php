@@ -18,10 +18,12 @@ $logged = $_SESSION['email'];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@200&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../css/profile.css">
   <link rel="stylesheet" href="../css/style.css">
-  <meta name="description" content="Sejam bem vindos(a) venham conhecer nossa novas formas de desenvolvimentos e grande novas tecnologias">
+  <meta name="description"
+    content="Sejam bem vindos(a) venham conhecer nossa novas formas de desenvolvimentos e grande novas tecnologias">
 </head>
 
 <body>
@@ -91,14 +93,12 @@ $logged = $_SESSION['email'];
       <li class="profile">
         <div class="profile-details">
           <img src="profile.jpg" alt="profileImg">
-          <!-- <div class="name_job">
+          <div class="name_job">
             <div class="logoName">
-              <?= $_SESSION['person_name'] ?>
+              <?= $_SESSION['name'] ?>
             </div>
-            <div class="job">
-              <?= $_SESSION['profession'] ?>
-            </div>
-          </div> -->
+            <div class="job">Web designer</div>
+          </div>
         </div>
         <div class="d-flex">
           <a href="../api/exit.php" class="btn btn-danger me-5"><i class='bx bx-log-out' id="log_out"></i></a>
@@ -117,90 +117,80 @@ $logged = $_SESSION['email'];
             <form action="../api/update.php" method="POST" id="form">
 
               <div class="field">
-                <label for="text">Full name</label>
+                <label for="text">name</label>
                 <input type="name" name="name" id="name" required placeholder="" value="<?= $_SESSION['name'] ?>">
               </div>
 
               <div class="field">
-                <label for="text">E-mail</label>
-                <input type="text" name="email" id="email" required placeholder="" value="<?= $_SESSION['email'] ?>" disabled>
+                <label for="text">Last name</label>
+                <input type="name" name="last_name" id="last_name" required placeholder=""
+                  value="<?= $_SESSION['last_name'] ?>">
               </div>
 
               <div class="field">
-                <label for="number">Phone</label>
-                <input type="text" name="phone" id="phone" required placeholder="" value="<?php if (isset($_SESSION["phone"])) {
-                                                                                            echo $_SESSION["phone"] . '"';
-                                                                                          } else {
-                                                                                            echo '" placeholder=""';
-                                                                                          } ?>">
+                <label for="text">E-mail</label>
+                <input type="text" name="email" id="email" placeholder="" value="<?= $_SESSION['email'] ?>">
               </div>
 
               <div class="field">
                 <label for="text">profession</label>
-                <input type="text" name="profession" id="profession" required placeholder="" value="<?php if (isset($_SESSION["profession"])) {
-                                                                                                      echo $_SESSION["profession"] . '"';
-                                                                                                    } else {
-                                                                                                      echo '" placeholder=""';
-                                                                                                    } ?>">
+                <input type="text" name="profession" id="profession" placeholder="" value="<?php if (isset($_SESSION["profession"])) {
+                  echo $_SESSION["profession"] . '"';
+                } else {
+                  echo '" placeholder=""';
+                } ?>">
               </div>
 
               <div class="field">
-                <label for="text">birthday</label>
-                <input type="date" name="birthday" id="birthday" required placeholder="" value="<?php if (isset($_SESSION["birthday"])) {
-                                                                                                  echo $_SESSION["birthday"] . '"';
-                                                                                                } else {
-                                                                                                  echo '" placeholder=""';
-                                                                                                } ?>">
+                <label for="number">Phone</label>
+                <input type="text" name="phone" id="phone" placeholder="" value="<?php if (isset($_SESSION["phone"])) {
+                  echo $_SESSION["phone"] . '"';
+                } else {
+                  echo '" placeholder=""';
+                } ?>">
+
+              </div>
+              <div class="field">
+                <label for="text">College</label>
+                <input type="text" name="college" id="college" placeholder="" value="<?php if (isset($_SESSION["college"])) {
+                  echo $_SESSION["college"] . '"';
+                } else {
+                  echo '" placeholder=""';
+                } ?>">
               </div>
 
-              <h2 class="h-2">Address</h2>
-              <div class="field">
+              <div class="field_1">
                 <label for="text">Address</label>
-                <input type="text" name="address" id="address" required placeholder="" value="<?php if (isset($_SESSION['address'])) {
-                                                                                                echo $_SESSION['address'] . '"';
-                                                                                              } else {
-                                                                                                echo '" placeholder=""';
-                                                                                              } ?>">
+                <input type="text" name="address" id="address" placeholder="" value="<?php if (isset($_SESSION["address"])) {
+                  echo $_SESSION["address"] . '"';
+                } else {
+                  echo '" placeholder=""';
+                } ?>">
               </div>
-
-              <div class="field">
-                <label for="text">Number</label>
-                <input type="text" name="numbers" id="numbers" required placeholder="" value="<?php if (isset($_SESSION['numberss'])) {
-                                                                                                echo $_SESSION['numbers'] . '"';
-                                                                                              } else {
-                                                                                                echo '" placeholder=""';
-                                                                                              } ?>">
-              </div>
-
-
-              <div class="field">
-                <label for="text">Complement</label>
-                <input type="text" name="complement" id="complement" required placeholder="" value="<?php if (isset($_SESSION['complement'])) {
-                                                                                                      echo $_SESSION['complement'] . '"';
-                                                                                                    } else {
-                                                                                                      echo '" placeholder=""';
-                                                                                                    } ?>">
-              </div>
-
               <div class="field">
                 <label for="text">City</label>
-                <input type="text" name="city" id="city" required placeholder="" value="<?php if (isset($_SESSION['city'])) {
-                                                                                          echo $_SESSION['city'] . '"';
-                                                                                        } else {
-                                                                                          echo '" placeholder=""';
-                                                                                        } ?>">
+                <input type="text" name="city" id="city" placeholder="" value="<?php if (isset($_SESSION["city"])) {
+                  echo $_SESSION["city"] . '"';
+                } else {
+                  echo '" placeholder=""';
+                } ?>">
+              </div>
+              <div class="field">
+                <label for="text">Country</label>
+                <input type="text" name="country" id="country" placeholder="" value="<?php if (isset($_SESSION["country"])) {
+                  echo $_SESSION["country"] . '"';
+                } else {
+                  echo '" placeholder=""';
+                } ?>">
+              </div>
+              <div class="field">
+                <label for="text">Bio</label>
+                <textarea name="bio" id="bio" cols="50" rows="4"><?php if (isset($_SESSION["bio"])) {
+                  echo $_SESSION["bio"];
+                } ?></textarea>
+                <p><button class="btn" type="submit" name="submit">All save</button></p>
               </div>
 
-              <h2 class="h-2">My links</h2>
-              <div class="field">
-                <label for="text">linked_in</label>
-                <input type="text" name="linked_in" id="linked_in" required placeholder="" value="<?php if (isset($_SESSION["linked_in"])) {
-                                                                                                    echo $_SESSION["linked_in"] . '"';
-                                                                                                  } else {
-                                                                                                    echo '" placeholder=""';
-                                                                                                  } ?>">
-              </div>
-              <p><button class="btn" type="submit" name="submit">All save</button></p>
             </form>
           </div>
         </div>

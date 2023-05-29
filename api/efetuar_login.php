@@ -12,7 +12,14 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['passwor
             $row = $sql->fetch();
             $_SESSION['id'] = $row['id'];
             $_SESSION['name'] = $row['name'];
+            $_SESSION['last_name'] = $row['last_name'];
             $_SESSION['email'] = $email;
+            $_SESSION['phone'] = $row['phone'];
+            $_SESSION['college'] = $row['college'];
+            $_SESSION['address'] = $row['address'];
+            $_SESSION['city'] = $row['city'];
+            $_SESSION['country'] = $row['country'];
+            $_SESSION['bio'] = $row['bio'];
             header("Location:../api/system.php");
         } else {
             unset($_SESSION['email']);
