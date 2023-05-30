@@ -117,7 +117,7 @@ $logged = $_SESSION['email'];
             <form action="../api/update.php" method="POST" id="form">
 
               <div class="field">
-                <label for="text">name</label>
+                <label for="text">Name</label>
                 <input type="name" name="name" id="name" required placeholder="" value="<?= $_SESSION['name'] ?>">
               </div>
 
@@ -141,19 +141,19 @@ $logged = $_SESSION['email'];
                 } ?>">
               </div>
 
-              <div class="field">
-                <label for="number">Phone</label>
-                <input type="text" name="phone" id="phone" placeholder="" value="<?php if (isset($_SESSION["phone"])) {
-                  echo $_SESSION["phone"] . '"';
-                } else {
-                  echo '" placeholder=""';
-                } ?>">
 
-              </div>
               <div class="field">
                 <label for="text">College</label>
                 <input type="text" name="college" id="college" placeholder="" value="<?php if (isset($_SESSION["college"])) {
                   echo $_SESSION["college"] . '"';
+                } else {
+                  echo '" placeholder=""';
+                } ?>">
+              </div>
+              <div class="field">
+                <label for="text">Phone</label>
+                <input type="text" name="phone" id="phone" placeholder="" value="<?php if (isset($_SESSION["phone"])) {
+                  echo $_SESSION["phone"] . '"';
                 } else {
                   echo '" placeholder=""';
                 } ?>">
@@ -183,6 +183,7 @@ $logged = $_SESSION['email'];
                   echo '" placeholder=""';
                 } ?>">
               </div>
+
               <div class="field">
                 <label for="text">Bio</label>
                 <textarea name="bio" id="bio" cols="50" rows="4"><?php if (isset($_SESSION["bio"])) {

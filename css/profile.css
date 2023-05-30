@@ -13,8 +13,8 @@
 
 .container {
     background-color: rgba(255, 225, 225, 0.1);
-    width: 42vw !important;
-    height: 60vh;
+    width: 24vw !important;
+    height: 58vh;
     padding: 2rem;
     box-shadow: 5px 5px 15px #000;
     font-weight: bold;
@@ -49,25 +49,6 @@ input {
     justify-content: center;
 }
 
-.field_1 {
-    width: 105%;
-    float: left;
-    color: #c0c0c0;
-}
-
-.field_1 input {
-    margin: 10px 1%;
-    padding: 8px 1%;
-    width: 90%;
-}
-
-.field_1 select {
-    margin: 10px 1%;
-    padding: 8px 1%;
-    width: 94%;
-    font-weight: bold;
-}
-
 
 .field {
     width: 50%;
@@ -82,6 +63,25 @@ input {
 }
 
 .field select {
+    margin: 10px 1%;
+    padding: 8px 1%;
+    width: 94%;
+    font-weight: bold;
+}
+
+.field_1 {
+    width: 105%;
+    float: left;
+    color: #c0c0c0;
+}
+
+.field_1 input {
+    margin: 10px 1%;
+    padding: 8px 1%;
+    width: 90%;
+}
+
+.field_1 select {
     margin: 10px 1%;
     padding: 8px 1%;
     width: 94%;
@@ -116,8 +116,14 @@ img {
 .logoName,
 .job {
     display: flex;
-    justify-content: center;
-    margin-top: 12px;
+    /* justify-content: center; */
+    margin-left: 17px;
+}
+
+.name {
+    display: flex;
+    /* justify-content: center; */
+    margin: 17px;
 }
 
 .text_ {

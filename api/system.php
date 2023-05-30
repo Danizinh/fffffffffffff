@@ -14,11 +14,15 @@ $logado = $_SESSION['email'];
 <head>
   <meta charset="UTF-8">
   <title>System of login</title>
-  <link rel="stylesheet" href="../css/style.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@200&display=swap"
+    rel="stylesheet">
   <meta name="description"
     content="Sejam bem vindos(a) venham conhecer nossa novas formas de desenvolvimentos e grande novas tecnologias">
+  <link rel="stylesheet" href="../css/profile.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -103,6 +107,16 @@ $logado = $_SESSION['email'];
   </div>
   <section class="home-section">
     <div class="text">Dashboard</div>
+    <div class="logoName">
+      <p>This is your dashboard</p>
+    </div>
+
+    <div class="name">
+      <p class="paragraph">Hello
+        <?= $_SESSION['name'] ?>
+      </p>
+    </div>
+
   </section>
 
   <script src="../js/script.js"></script>
