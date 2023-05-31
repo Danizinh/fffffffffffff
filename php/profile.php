@@ -35,14 +35,14 @@ $logged = $_SESSION['email'];
     </div>
     <ul class="nav-list">
       <li>
-        <a href="../api/system.html">
+        <a href="../api/system.php">
           <i class='bx bx-grid-alt'></i>
           <span class="links_name">Dashboard</span>
         </a>
         <span class="tooltip">Dashboard</span>
       </li>
       <li>
-        <a href="../php/profile.html">
+        <a href="../php/profile.php">
           <i class='bx bx-user'></i>
           <span class="links_name">Profile</span>
         </a>

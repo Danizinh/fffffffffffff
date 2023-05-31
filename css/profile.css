@@ -25,11 +25,12 @@
     background-color: rgba(255, 225, 225, 0.1);
     width: 42vw !important;
     height: 32vh;
+    width: 200px;
+    height: 358%;
     padding: 2rem;
     box-shadow: 5px 5px 15px #000;
     font-weight: bold;
-    margin-right: 36px !important;
-    border-radius: 10px !important;
+    margin-left: 21%;
 }
 
 
@@ -94,11 +95,12 @@ input {
 }
 
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 11px;
-    border-radius: 5px;
+    /* display: flex; */
+    /* */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* padding: 11px; */
+    border-radius: initial;
 }
 
 img {
