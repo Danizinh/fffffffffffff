@@ -1,6 +1,6 @@
 <?php
 
-include dirname(__DIR__, 1) . "/include/conn.php.php";
+include dirname(__DIR__, 1) . "/include/conn.php";
 session_start();
 
 if (isset($_POST['submit'])) {

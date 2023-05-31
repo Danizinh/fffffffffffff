@@ -1,13 +1,5 @@
 <?php
 include "../include/config.php";
-$name = "";
-$email = "";
-$phone = "";
-$address = "";
-$age = "";
-
-$errorMessage = "";
-$sucessMenssage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!isset($_GET["id"])) {
@@ -39,37 +31,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $phone = $_POST["phone"];
     $address = $_POST["address"];
     $age = $_POST["age"];
-
-
-    do {
-        if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($age)) {
-            $errorMessage = "All the fields are required";
-            break;
-        }
-
-        $sql = $pdo->prepare("UPDATE pay SET name = :name, email = :email, phone = :phone,
-         address = :address, age= :age WHERE id = :id");
-        $sql->bindValue(":id", $id);
-        $sql->bindValue(":name", $name);
-        $sql->bindValue(":email", $email);
-        $sql->bindValue(":phone", $phone);
-        $sql->bindValue(":address", $address);
-        $sql->bindValue(":age", $age);
-        if ($result = $sql->execute()) {
-            if (!$result) {
-                $errorMessage = "Invalid query:";
-                break;
-            }
-        }
-
-        $sucessMenssage = "added correctly";
-
-        header("Location:../api/system/php");
-        exit;
-    } while (true);
 }
-?>
+if ($sql = $pdo->prepare("UPDATE pay SET name = :name, email = :email, phone = :phone,
+    address = :address, age= :age WHERE id = :id"));
+$sql->bindValue(":id", $id);
+$sql->bindValue(":name", $name);
+$sql->bindValue(":email", $email);
+$sql->bindValue(":phone", $phone);
+$sql->bindValue(":address", $address);
+$sql->bindValue(":age", $age);
+if ($result = $sql->execute()) {
+    if (!$result) {
+        $errorMessage = "Invalid query:";
+        exit;
+    }
 
+    $sucessMenssage = "added correctly";
+
+    header("Location:../api/system/php");
+    exit;
+}
+
+
+?>
 
 
 <!DOCTYPE html>
