@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['password'])) {
-    include_once("../connection/conn.php");
+    include dirname(__DIR__, 1) . "/include/conn.php";
     $email = addslashes($_POST['email']);
     $password = addslashes(md5($_POST['password']));
     $sql = $pdo->prepare("SELECT * FROM profile WHERE email = :email and password = :password");

@@ -19,10 +19,8 @@ $logado = $_SESSION['email'];
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@200&display=swap"
-    rel="stylesheet">
-  <meta name="description"
-    content="Sejam bem vindos(a) venham conhecer nossa novas formas de desenvolvimentos e grande novas tecnologias">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@200&display=swap" rel="stylesheet">
+  <meta name="description" content="Sejam bem vindos(a) venham conhecer nossa novas formas de desenvolvimentos e grande novas tecnologias">
   <link rel="stylesheet" href="../css/profile.css">
 </head>
 
@@ -145,35 +143,21 @@ $logado = $_SESSION['email'];
             }
           }
           while ($row = $sql->fetch()) {
-            ?>
+          ?>
             <tr>
+              <td><?= $row['id'] ?></td>
+              <td><?= $row['name'] ?></td>
+              <td><?= $row['email'] ?></td>
+              <td><?= $row['phone'] ?></td>
+              <td><?= $row['address'] ?></td>
+              <td><?= $row['age'] ?></td>
+              <td><?= $row['created_at'] ?></td>
               <td>
-                <?= $row['id'] ?>
-              </td>
-              <td>
-                <?= $row['name'] ?>
-              </td>
-              <td>
-                <?= $row['email'] ?>
-              </td>
-              <td>
-                <?= $row['phone'] ?>
-              </td>
-              <td>
-                <?= $row['address'] ?>
-              </td>
-              <td>
-                <?= $row['age'] ?>
-              </td>
-              <td>
-                <?= $row['created_at'] ?>
-              </td>
-              <td>
-                <a class='btn btn-primary btn-sm' href='../CRUD/edit.php<?= $row['id'] ?>'>Edit</a>
-                <a class='btn btn-danger btn-sm' href='../CRUD/delete.php<?= $row['id'] ?>'>Delete</a>
+                <a class='btn btn-primary btn-sm' href='../CRUD/edit.php?id=<?= $row['id'] ?>'>Edit</a>
+                <a class='btn btn-danger btn-sm' href='../CRUD/delete.php?id=<?= $row['id'] ?>'>Delete</a>
               </td>
             </tr>
-            <?php
+          <?php
           }
           ?>
         </tbody>

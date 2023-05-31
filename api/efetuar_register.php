@@ -1,5 +1,5 @@
 <?php
-include_once("../connection/conn.php");
+include dirname(__DIR__, 1) . "/include/conn.php.php";
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $last_name = $_POST['last_name'];

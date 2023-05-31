@@ -10,6 +10,6 @@ if (isset($_GET['id'])) {
         header("Location:../api/system.php");
     } else {
         header("Location:../api/system.php");
-        die;
+        exit;
     }
 }
