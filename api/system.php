@@ -19,8 +19,10 @@ $logado = $_SESSION['email'];
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@200&display=swap" rel="stylesheet">
-  <meta name="description" content="Sejam bem vindos(a) venham conhecer nossa novas formas de desenvolvimentos e grande novas tecnologias">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@200&display=swap"
+    rel="stylesheet">
+  <meta name="description"
+    content="Sejam bem vindos(a) venham conhecer nossa novas formas de desenvolvimentos e grande novas tecnologias">
   <link rel="stylesheet" href="../css/profile.css">
 </head>
 
@@ -93,7 +95,7 @@ $logado = $_SESSION['email'];
           <img src="profile.jpg" alt="profileImg">
           <div class="name_job">
             <div class="logoName">
-              <?= $_SESSION['name'] ?>
+              <?= $_SESSION['full_name'] ?>
             </div>
             <div class="job">Web designer</div>
           </div>
@@ -115,59 +117,95 @@ $logado = $_SESSION['email'];
         <?= $_SESSION['name'] ?>
       </p>
     </div>
-    <div class="container_ my-5">
-      <h2 class="h-2">List of Client</h2>
-      <a class="btn btn-primary" href="../CRUD/create.php" role="button">New Client</a>
-      <br>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>E-mail</th>
-            <th>Phone</th>
-            <th>Addrees</th>
-            <th>Age</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          include("../include/config.php");
-
-          $sql = $pdo->prepare("SELECT * FROM pay");
-
-          if ($result = $sql->execute()) {
-            if (!$result) {
-              die("Invalid query:");
-            }
-          }
-          while ($row = $sql->fetch()) {
-          ?>
+    <div class="rowdiv">
+      <div class="container_ my-5">
+        <h2 class="h-2">List of Client</h2>
+        <a class="btn btn-primary" href="../CRUD/create.php" role="button">New Client</a>
+        <br>
+        <table class="table">
+          <thead>
             <tr>
-              <td><?= $row['id'] ?></td>
-              <td><?= $row['name'] ?></td>
-              <td><?= $row['email'] ?></td>
-              <td><?= $row['phone'] ?></td>
-              <td><?= $row['address'] ?></td>
-              <td><?= $row['age'] ?></td>
-              <td><?= $row['created_at'] ?></td>
-              <td>
-                <a class='btn btn-primary btn-sm' href='../CRUD/edit.php?id=<?= $row['id'] ?>'>Edit</a>
-                <a class='btn btn-danger btn-sm' href='../CRUD/delete.php?id=<?= $row['id'] ?>'>Delete</a>
-              </td>
+              <th>Id</th>
+              <th>Name</th>
+              <th>E-mail</th>
+              <th>Phone</th>
+              <th>Addrees</th>
+              <th>Age</th>
             </tr>
-          <?php
-          }
-          ?>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <?php
+            include("../include/config.php");
+            $sql = $pdo->prepare("SELECT * FROM pay");
+            if ($result = $sql->execute()) {
+              if (!$result) {
+                die("Invalid query:");
+              }
+            }
+            while ($row = $sql->fetch()) {
+              ?>
+              <tr>
+                <td>
+                  <?= $row['id'] ?>
+                </td>
+                <td>
+                  <?= $row['name'] ?>
+                </td>
+                <td>
+                  <?= $row['email'] ?>
+                </td>
+                <td>
+                  <?= $row['phone'] ?>
+                </td>
+                <td>
+                  <?= $row['address'] ?>
+                </td>
+                <td>
+                  <?= $row['age'] ?>
+                </td>
+                <td>
+                  <?= $row['created_at'] ?>
+                </td>
+                <td>
+                  <a class='btn btn-primary btn-sm' href='../CRUD/edit.php?id=<?= $row['id'] ?>'>Edit</a>
+                  <a class='btn btn-danger btn-sm' href='../CRUD/delete.php?id=<?= $row['id'] ?>'>Delete</a>
+                </td>
+              </tr>
+              <?php
+            }
+            ?>
+          </tbody>
+        </table>
+      </div>
+      <div class="container">
+        <div class="circular_image">
+          <img src="../img/pexels-revac-film_s_photography-54278.jpg">
+        </div>
+        <div class="name_job">
+          <div class="logoName">
+            <?= $_SESSION['name'] ?>
+
+
+          </div>
+          <div class="job">
+            <?= $_SESSION['profession'] ?>
+          </div>
+          <div class="job">
+            <?= $_SESSION['city'] ?>,
+            <?= $_SESSION['state'] ?>
+          </div>
+          <div class="bt">
+            <a href="../php/profile.php">
+              <button class="button button4">Edit Profile</button>
+            </a>
+          </div>
+
+
+        </div>
+      </div>
     </div>
   </section>
-
-
   <script src="../js/script.js"></script>
-
 </body>
 
 </html>

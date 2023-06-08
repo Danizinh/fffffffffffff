@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['password']) == true)) {
+if (!isset($_SESSION['email']) == true) {
   unset($_SESSION['email']);
   unset($_SESSION['password']);
   header('Location: ../php/login.php');
@@ -129,8 +129,9 @@ $logged = $_SESSION['email'];
 
               <div class="field">
                 <label for="text">E-mail</label>
-                <input type="text" name="email" id="email" placeholder="" value="<?= $_SESSION['email'] ?>">
+                <input type="text" disabled name="email" id="email" placeholder="" value="<?= $_SESSION['email'] ?>">
               </div>
+
 
               <div class="field">
                 <label for="text">profession</label>
@@ -141,11 +142,10 @@ $logged = $_SESSION['email'];
                 } ?>">
               </div>
 
-
               <div class="field">
-                <label for="text">College</label>
-                <input type="text" name="college" id="college" placeholder="" value="<?php if (isset($_SESSION["college"])) {
-                  echo $_SESSION["college"] . '"';
+                <label for="text">birhday</label>
+                <input type="date" name="birthday" id="birthday" placeholder="" value="<?php if (isset($_SESSION["birthday"])) {
+                  echo $_SESSION["birthday"] . '"';
                 } else {
                   echo '" placeholder=""';
                 } ?>">
@@ -159,7 +159,7 @@ $logged = $_SESSION['email'];
                 } ?>">
               </div>
 
-              <div class="field_1">
+              <div class="field">
                 <label for="text">Address</label>
                 <input type="text" name="address" id="address" placeholder="" value="<?php if (isset($_SESSION["address"])) {
                   echo $_SESSION["address"] . '"';
@@ -168,9 +168,33 @@ $logged = $_SESSION['email'];
                 } ?>">
               </div>
               <div class="field">
+                <label for="text">State</label>
+                <input type="text" name="state" id="state" placeholder="" value="<?php if (isset($_SESSION["state"])) {
+                  echo $_SESSION["state"] . '"';
+                } else {
+                  echo '" placeholder=""';
+                } ?>">
+              </div>
+              <div class="field">
                 <label for="text">City</label>
                 <input type="text" name="city" id="city" placeholder="" value="<?php if (isset($_SESSION["city"])) {
                   echo $_SESSION["city"] . '"';
+                } else {
+                  echo '" placeholder=""';
+                } ?>">
+              </div>
+              <div class="field">
+                <label for="text">Neighborhood</label>
+                <input type="text" name="neighborhood" id="neighborhood" placeholder="" value="<?php if (isset($_SESSION["neighborhood"])) {
+                  echo $_SESSION["neighborhood"] . '"';
+                } else {
+                  echo '" placeholder=""';
+                } ?>">
+              </div>
+              <div class="field">
+                <label for="text">Country</label>
+                <input type="text" name="country" id="country" placeholder="" value="<?php if (isset($_SESSION["country"])) {
+                  echo $_SESSION["country"] . '"';
                 } else {
                   echo '" placeholder=""';
                 } ?>">
@@ -189,26 +213,55 @@ $logged = $_SESSION['email'];
                 <textarea name="bio" id="bio" cols="50" rows="4"><?php if (isset($_SESSION["bio"])) {
                   echo $_SESSION["bio"];
                 } ?></textarea>
-                <p><button class="btn" type="submit" name="submit">All save</button></p>
+                <p><button class="button button4" type="submit" name="submit">All save</button></p>
               </div>
+
+
 
             </form>
           </div>
         </div>
       </div>
-      <div class="container_">
-        <div class="circular_image">
-          <img src="../img/pexels-revac-film_s_photography-54278.jpg">
-        </div>
-        <!-- <div class="name_job">
-          <div class="logoName">
-            <?= $_SESSION['person_name'] ?>
+      <div class="div-div">
+        <div class="container_">
+          <div class="circular_image">
+            <img src="../img/pexels-revac-film_s_photography-54278.jpg">
           </div>
-          <div class="job">
-            <?= $_SESSION['email'] ?>
+          <div class="name_job">
+            <div class="logoName">
+              <?= $_SESSION['name'] ?>,
+              <?= $_SESSION['last_name'] ?>,
+            </div>
+            <div class="job">
+              <?= $_SESSION['email'] ?>
+            </div>
           </div>
+          <div class="name_job">
+            <div class="name">
+              <?= $_SESSION['city'] ?>,
+              <?= $_SESSION['state'] ?>
+            </div>
 
-        </div> -->
+          </div>
+        </div>
+        <div class="container_">
+          <div class="circular_image">
+            <img src="../img/pexels-revac-film_s_photography-54278.jpg">
+          </div>
+          <div class="name_job">
+            <div class="logoName">
+              <?= $_SESSION['name'] ?>
+            </div>
+            <div class="job">
+              <?= $_SESSION['email'] ?>
+            </div>
+            <div class="job">
+              <?= $_SESSION['city'] ?>,
+              <?= $_SESSION['state'] ?>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
     </div>

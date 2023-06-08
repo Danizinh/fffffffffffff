@@ -15,10 +15,14 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['passwor
             $_SESSION['last_name'] = $row['last_name'];
             $_SESSION['email'] = $email;
             $_SESSION['phone'] = $row['phone'];
-            $_SESSION['college'] = $row['college'];
+            $_SESSION['profession'] = $row['profession'];
             $_SESSION['address'] = $row['address'];
+            $_SESSION['birthday'] = $row['birthday'];
             $_SESSION['city'] = $row['city'];
             $_SESSION['country'] = $row['country'];
+            $_SESSION['state'] = $row['state'];
+            $_SESSION['neighborhood'] = $row['neighborhood'];
+            $_SESSION['password'] = $row['password'];
             $_SESSION['bio'] = $row['bio'];
             header("Location:../api/system.php");
         } else {
