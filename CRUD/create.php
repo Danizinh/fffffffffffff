@@ -42,7 +42,8 @@ if (isset($_POST['name'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@200&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
@@ -68,52 +69,54 @@ if (isset($_POST['name'])) {
                 <label class="col-sm-3 col-form-label">Name</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="name" value="<?php if (isset($_SESSION[" name"])) {
-                                                                                    echo $_SESSION["name"] . '"';
-                                                                                } else {
-                                                                                    echo '" placeholder=""';
-                                                                                } ?>">
+                        echo $_SESSION["name"] . '"';
+                    } else {
+                        echo '" placeholder=""';
+                    } ?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="email" value="<?php if (isset($_SESSION[" email"])) {
-                                                                                    echo $_SESSION["email"] . '"';
-                                                                                } else {
-                                                                                    echo '" placeholder=""';
-                                                                                } ?>">
+                        echo $_SESSION["email"] . '"';
+                    } else {
+                        echo '" placeholder=""';
+                    } ?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Phone</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="phone" value="<?php if (isset($_SESSION[" phone"])) {
-                                                                                    echo $_SESSION["phone"] . '"';
-                                                                                } else {
-                                                                                    echo '" placeholder=""';
-                                                                                } ?>">
+                        echo $_SESSION["phone"] . '"';
+                    } else {
+                        echo '" placeholder=""';
+                    } ?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Address</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="address" value="<?php if (isset($_SESSION["
-                        address"])) {
-                                                                                        echo $_SESSION["address"] . '"';
-                                                                                    } else {
-                                                                                        echo '" placeholder=""';
-                                                                                    } ?>">
+                    <input type="text" class="form-control" name="address" value="<?php if (
+                        isset($_SESSION["
+                        address"])
+                    ) {
+                        echo $_SESSION["address"] . '"';
+                    } else {
+                        echo '" placeholder=""';
+                    } ?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Age</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="age" value="<?php if (isset($_SESSION[" age"])) {
-                                                                                    echo
-                                                                                    $_SESSION["age"] . '"';
-                                                                                } else {
-                                                                                    echo '" placeholder=""';
-                                                                                } ?>">
+                        echo
+                            $_SESSION["age"] . '"';
+                    } else {
+                        echo '" placeholder=""';
+                    } ?>">
                 </div>
             </div>
             <?php

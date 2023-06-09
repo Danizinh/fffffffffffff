@@ -32,8 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $address = $_POST["address"];
     $age = $_POST["age"];
 }
-if ($sql = $pdo->prepare("UPDATE pay SET name = :name, email = :email, phone = :phone,
-    address = :address, age= :age WHERE id = :id"));
+if (
+    $sql = $pdo->prepare("UPDATE pay SET name = :name, email = :email, phone = :phone,
+    address = :address, age= :age WHERE id = :id")
+)
+    ;
 $sql->bindValue(":id", $id);
 $sql->bindValue(":name", $name);
 $sql->bindValue(":email", $email);
@@ -48,7 +51,7 @@ if ($result = $sql->execute()) {
 
     $sucessMenssage = "added correctly";
 
-    header("Location:../api/system/php");
+    header("Location:../api/system.php");
     exit;
 }
 

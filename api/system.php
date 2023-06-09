@@ -107,12 +107,23 @@ $logado = $_SESSION['email'];
     </ul>
   </div>
   <section class="home-section">
-    <div class="text">Dashboard</div>
-    <div class="logoName">
-      <p>This is your dashboard</p>
+    <div class="text">Welcome Back,
+      <?= $_SESSION['name'] ?>,
+      <?= $_SESSION['last_name'] ?> !
     </div>
 
-    <div class="name">
+    <div class="logo_Date">
+      <?php
+      echo date('F d, Y');
+      ?>
+      <div class="lorem">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </div>
+
+
+    </div>
+
+    <!-- <div class="name">
       <p class="paragraph">Hello
         <?= $_SESSION['name'] ?>
       </p>
@@ -176,8 +187,8 @@ $logado = $_SESSION['email'];
             ?>
           </tbody>
         </table>
-      </div>
-      <div class="container">
+      </div> -->
+    <!-- <div class="container">
         <div class="circular_image">
           <img src="../img/pexels-revac-film_s_photography-54278.jpg">
         </div>
@@ -202,7 +213,7 @@ $logado = $_SESSION['email'];
 
 
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
   <script src="../js/script.js"></script>
