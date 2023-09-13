@@ -16,7 +16,7 @@ CREATE TABLE
         country VARCHAR(50),
         neighborhood VARCHAR(50),
         zip VARCHAR(50),
-        password VARCHAR(100)
+        senha_crypt VARCHAR(100)
     );
 
 ALTER TABLE profile ADD COLUMN bio VARCHAR(6555);
